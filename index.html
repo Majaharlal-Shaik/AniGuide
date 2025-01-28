@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AniGuides</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="header">
+        <h1>AniGuides</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#genres-section">Genres</a></li>
+                <li><a href="#about-section">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero-banner" id="banner-content">
+            <img src="./image/anime-background.png" alt="Hero Background" class="hero-image">
+            <div class="hero-content">
+                <h1>Find Your Next Favorite Anime</h1>
+                <p>Explore top-rated and trending anime recommendations.</p>
+                <input type="text" id="search-bar" placeholder="Search for an anime...">
+                <button id="search-btn">Search</button>
+                <!-- <button id="featured-btn">Featured Recommendations</button> -->
+            </div>
+        </section>
+        
+        
+        <section class="section" id="weekly-popular">
+            <h2>Weekly Popular Anime</h2>
+            <div class="scroll-container" id="weekly-cards">
+                <button class="scroll-btn left" id="scroll-left">&lt;</button>
+                <div class="anime-scroll" id="weekly-anime-scroll">
+                    <!-- Anime Cards Weekly will be added using popular values via JavaScript -->
+                </div>
+                <button class="scroll-btn right" id="scroll-right">&gt;</button>
+            </div>
+        </section>
+    
+        <section id="featured" class="featured-section">
+            <h2 id="featured-heading">Featured Recommendations</h2>
+            <div class="anime-cards">
+                <!-- Cards will be dynamically added via JavaScript -->
+            </div>
+            <button id="load-more">Load More</button>
+        </section>
+        <!--
+        <section id="manga" class="manga-section">
+            <h2 id="manga-heading">Manga Recommendations</h2>
+            <div class="manga-cards">
+                Cards will be dynamically added via JavaScript
+            </div>
+             
+        </section> -->
+
+        <section id="genres-section">
+            <h2>Genres</h2>
+            <div id="genres-container" class="collapsed">
+                <button class="genre">Action</button>
+                <button class="genre">Adventure</button>
+                <button class="genre">Cars</button>
+                <button class="genre">Comedy</button>
+                <button class="genre">Demons</button>
+                <button class="genre">Drama</button>
+                <button class="genre">Fantasy</button>
+                <button class="genre">Game</button>
+                <button class="genre">Horror</button>
+                <button class="genre">Isekai</button>
+                <button class="genre">Josei</button>
+                <button class="genre">Kids</button>
+                <button class="genre">Magic</button>
+                <button class="genre">Martial Arts</button>
+                <button class="genre">Mecha</button>
+                <button class="genre">Psychological</button>
+                <button class="genre">Romance</button>
+                <button class="genre">Shoujo</button>
+                <button class="genre">Shonen</button>
+                <button class="genre">Slice of Life</button>
+                <button class="genre">Sci-Fi</button>
+                <button class="genre">Space</button>
+                <button class="genre">Sports</button>
+                <button class="genre">Thriller</button>
+                <button class="genre">Vampire</button>
+            </div>
+            <button id="toggle-more">Show More</button>
+            
+
+        </section>
+        <section id="about-section" class="content-about">
+            <h2>About Us</h2>
+            <p>Welcome to AniGuide,</p>
+            <p>Your ultimate companion in the world of anime and manga!</p>
+            <p>At AniGuides, we believe in celebrating the diverse and captivating universe of anime. Whether you’re a seasoned otaku or just starting your journey, our mission is to be your trusted guide, offering insights, recommendations, and resources to enhance your experience.</p>
+            <p>Curated Recommendations: Discover anime tailored to your tastes, from action-packed thrillers to heartwarming slice-of-life stories.</p>
+            <p>Weekly Highlights: Stay updated with trending shows, fan-favorite classics.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 AniGuides | Your Anime Discovery Platform</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
