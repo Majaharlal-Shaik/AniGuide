@@ -218,6 +218,7 @@ header h1 {
     padding-right: 100px;
     padding-left: 100px;
     text-align: center;
+    filter: blur(150);
     margin: 20px;
     margin-top: 30px;
     background-color: #f9f9f9;
@@ -229,14 +230,14 @@ header h1 {
     margin-bottom: 30px;
 }
 
-.anime-cards {
+.anime-cards,.manga-cards {
     display: flex;
     gap: 30px;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.anime-card {
+.anime-card,.manga-card {
     position: relative;
     cursor: pointer;
     width: 200px;
@@ -247,17 +248,17 @@ header h1 {
     background-color: white;
 }
 
-.anime-card img {
+.anime-card img,.manga-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.anime-card img:hover{
+.anime-card img:hover,.manga-card img:hover {
     transform: scale(1.05); /*Add zoom effect on hover */
     transition: transform 0.3s ease-in;
 }
-.anime-card .info {
+.anime-card .info,.manga-card .info {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -270,12 +271,14 @@ header h1 {
     justify-content: center;
     align-items: center;
     text-align: center;
-    text-overflow: ellipsis " [..]";
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: wrap;
     transform: translateY(100%); /* Hide the info below the card */
     transition: transform 0.4s ease-in-out;
 }
 
-.anime-card:hover .info {
+.anime-card:hover .info,.manga-card:hover .info {
     transform: translateY(0); /* Reveal the info on hover */
     backdrop-filter: blur(3px);
 }

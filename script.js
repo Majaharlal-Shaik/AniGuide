@@ -2,7 +2,9 @@ let currentIndex = 0;
 const itemsPerPage = 10;
 
 const animeCardsContainer = document.querySelector('.anime-cards');
-const loadMoreButton = document.getElementById('load-more');
+const mangaCardsContainer = document.querySelector('.manga-cards');
+const loadMoreAnimeButton = document.getElementById('load-more-anime');
+const loadMoreMangaButton = document.getElementById('load-more-manga');
 const weeklyAnimeContainer = document.getElementById('weekly-anime-scroll');
 const weeklyPopularSection = document.getElementById('weekly-popular');
 const bannerContentSection=document.getElementById('banner-content')
@@ -35,6 +37,24 @@ function displayAnimeCards(startIndex, count) {
     }
 }
 
+
+// Displaying Manga Cards
+function displayMangaCards(startIndex, count) {
+    const endIndex = Math.min(startIndex + count, mangaData.length);
+    for (let i = startIndex; i < endIndex; i++) {
+        const manga = mangaData[i];
+        const card = document.createElement('div');
+        card.classList.add('manga-card');
+        card.innerHTML = `
+            <img src="${manga.image}" alt="${manga.title}">
+            <div class="info">
+                <h3>${manga.title}</h3>
+                <p>${manga.description}</p>
+            </div>`;
+        mangaCardsContainer.appendChild(card);
+    }
+}
+
 // Load More Anime
 function loadMoreAnime() {
     displayAnimeCards(currentIndex, itemsPerPage);
@@ -44,9 +64,21 @@ function loadMoreAnime() {
     }
 }
 
+// Load More Manga
+function loadMoreManga() {
+    displayMangaCards(mangaIndex, itemsPerPage);
+    mangaIndex += itemsPerPage;
+    if (mangaIndex >= mangaData.length) {
+        loadMoreMangaButton.style.display = 'none';
+    }
+}
+
 // Initial Load
 loadMoreAnime();
 loadMoreButton.addEventListener('click', loadMoreAnime);
+
+loadMoreManga();
+loadMoreMangaButton.addEventListener('click', loadMoreManga);
 
 // Search
 document.getElementById('search-btn').addEventListener('click', () => {
@@ -62,6 +94,7 @@ document.getElementById('search-btn').addEventListener('click', () => {
    bannerContentSection.style.display = 'none';
    document.getElementById('genres-section').style.display = 'none';
    document.getElementById('about-section').style.display = 'none';
+   document.getElementById('featured-manga').style.display = 'none';
 
 
     if (filteredData.length > 0) {
