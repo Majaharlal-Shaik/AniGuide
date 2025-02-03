@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AniGuides</title>
+    <title>AniGuide</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header class="header">
-        <h1>AniGuides</h1>
+        <h1>AniGuide</h1>
         <nav>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#genres-section">Genres</a></li>
                 <li><a href="#about-section">About</a></li>
+                <input type="text" id="search-bar" placeholder="Search for an anime...">
+                <button id="search-btn">Search</button>
             </ul>
         </nav>
     </header>
@@ -22,10 +24,11 @@
         <section class="hero-banner" id="banner-content">
             <img src="./image/anime-background.png" alt="Hero Background" class="hero-image">
             <div class="hero-content">
-                <h1>Find Your Next Favorite Anime</h1>
+                <h1>Find Your </h1>
+                <h1>Next Anime</h1>
+                <p>Discover anime recommendations based on your preferences.</p>
                 <p>Explore top-rated and trending anime recommendations.</p>
-                <input type="text" id="search-bar" placeholder="Search for an anime...">
-                <button id="search-btn">Search</button>
+                
                 <!-- <button id="featured-btn">Featured Recommendations</button> -->
             </div>
         </section>
@@ -43,11 +46,11 @@
         </section>
     
         <section id="featured" class="featured-section">
-            <h2 id="featured-heading">Featured Recommendations</h2>
+            <h2 id="featured-heading">Featured Anime Recommendations</h2>
             <div class="anime-cards">
                 <!-- Cards will be dynamically added via JavaScript -->
             </div>
-            <button id="load-more">Load More</button>
+            <button id="load-more-anime">Load More Anime</button>
         </section>
         <!--
         <section id="manga" class="manga-section">
@@ -57,6 +60,13 @@
             </div>
              
         </section> -->
+        <section id="featured-manga" class="featured-section">
+            <h2 id="featured-heading">Featured Manga/Manhwa Recommendations</h2>
+            <div class="manga-cards">
+                <!-- Cards will be dynamically added via JavaScript -->
+            </div>
+            <button id="load-more-manga">Load More Manga</button>
+        </section>
 
         <section id="genres-section">
             <h2>Genres</h2>
@@ -104,8 +114,8 @@
     <footer class="footer">
         <p>© 2025 AniGuides | Your Anime Discovery Platform</p>
     </footer>
-
-    <script src="script.js"></script>
     <script src="anidata.js"></script>
+    <script src="mangadata.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

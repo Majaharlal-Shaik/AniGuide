@@ -1,4 +1,5 @@
-let currentIndex = 0;
+let animeIndex = 0;
+let mangaIndex = 0;
 const itemsPerPage = 10;
 
 const animeCardsContainer = document.querySelector('.anime-cards');
@@ -37,7 +38,6 @@ function displayAnimeCards(startIndex, count) {
     }
 }
 
-
 // Displaying Manga Cards
 function displayMangaCards(startIndex, count) {
     const endIndex = Math.min(startIndex + count, mangaData.length);
@@ -57,13 +57,12 @@ function displayMangaCards(startIndex, count) {
 
 // Load More Anime
 function loadMoreAnime() {
-    displayAnimeCards(currentIndex, itemsPerPage);
-    currentIndex += itemsPerPage;
-    if (currentIndex >= animeData.length) {
-        loadMoreButton.style.display = 'none';
+    displayAnimeCards(animeIndex, itemsPerPage);
+    animeIndex += itemsPerPage;
+    if (animeIndex >= animeData.length) {
+        loadMoreAnimeButton.style.display = 'none';
     }
 }
-
 // Load More Manga
 function loadMoreManga() {
     displayMangaCards(mangaIndex, itemsPerPage);
@@ -75,7 +74,7 @@ function loadMoreManga() {
 
 // Initial Load
 loadMoreAnime();
-loadMoreButton.addEventListener('click', loadMoreAnime);
+loadMoreAnimeButton.addEventListener('click', loadMoreAnime);
 
 loadMoreManga();
 loadMoreMangaButton.addEventListener('click', loadMoreManga);
@@ -85,7 +84,7 @@ document.getElementById('search-btn').addEventListener('click', () => {
     const query = document.getElementById('search-bar').value.toLowerCase();
     const filteredData = animeData.filter(anime => anime.title.toLowerCase().includes(query));
     animeCardsContainer.innerHTML = ''; // Clear current cards
-    const featuredHeading = document.querySelector('#featured-heading'); // Update the correct selector
+    const featuredHeading = document.querySelector('#featured-heading'); 
     featuredHeading.textContent = `Search Results for "${query}"`;
 
 
@@ -109,10 +108,12 @@ document.getElementById('search-btn').addEventListener('click', () => {
 
             animeCardsContainer.appendChild(card);
         });
-        loadMoreButton.style.display = 'none';
+        loadMoreAnimeButton.style.display = 'none';
+        loadMoreMangaButton.style.display = 'none';
     } else {
         animeCardsContainer.innerHTML = '<p>No results found.</p>';
-        loadMoreButton.style.display = 'none';
+        loadMoreAnimeButton.style.display = 'none';
+        loadMoreMangaButton.style.display = 'none';
         document.getElementById('about-section').style.display = 'none';
     }
 });
@@ -132,7 +133,7 @@ document.getElementById('search-btn').addEventListener('click', () => {
         featuredHeading.textContent = 'Featured Anime';
 
         loadMoreButton.style.display = 'block'; // Show "Load More" button
-        currentIndex = 0;
+        mangaIndex = 0;
         loadMoreAnime(); // Reload initial anime cards
     }
 });*/
